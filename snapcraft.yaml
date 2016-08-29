@@ -1,0 +1,22 @@
+name: redpen
+version: 1.7.0
+summary: A proofreading tool to help writers or programmers
+description: RedPen is a proofreading tool to help writers or programmers who
+  write technical documents or manuals that need to adhere to a writing
+  standard.
+confinement: strict
+
+apps:
+    redpen:
+        command: redpen
+        plugs:
+            - home
+            - network
+
+parts:
+    redpen-jdk:
+        plugin: jdk
+        source: .
+    redpen:
+        plugin: dump
+        source: https://github.com/redpen-cc/redpen/releases/download/redpen-1.7.0/redpen-1.7.0.tar.gz
